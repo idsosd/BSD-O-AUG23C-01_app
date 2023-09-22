@@ -1,13 +1,16 @@
-// alert("De connectie met script.js doet het")
-let tafelvan7 = "" //een lege string, wordt uiteindelijk de tekst die op het scherm komt
-let teller = 1 //een teller die bij gaat houden 1 x7, 2 x7 3 x7 etc.
-let uitkomst = 0 //de uitkomst van onze berekeningen
-while (teller < 51)
+function displaytafel()
 {
-    uitkomst = teller * 8
-    tafelvan7 += teller + " x 8 = " + uitkomst + "<br>"
-    teller++ //de teller wordt 1 groter aan het einde van de lus
+    let tafelvan = document.getElementById("inputTafelVan").value
+    let tafellengte = document.getElementById("inputTafelLengte").value
+    let tafeltekst = "" //een lege string, wordt uiteindelijk de tekst die op het scherm komt
+    let teller = 1 //een teller die bij gaat houden 1 x7, 2 x7 3 x7 etc.
+    let uitkomst = 0 //de uitkomst van onze berekeningen
+    while (teller <= tafellengte)
+    {
+        uitkomst = teller * tafelvan
+        tafeltekst += teller + " x " + tafelvan + " = " + uitkomst + "<br>"
+        teller++ //de teller wordt 1 groter aan het einde van de lus
+    }
+    document.getElementById("tafel").innerHTML = tafeltekst
+    document.getElementById("tafelheader").innerHTML = "Tafel van " + tafelvan
 }
-//als hij uit de lus komt, is tafelvan7 helemaal gevuld met dat wat ik op het scherm wil hebben
-//tafelvan7 moet nog in de html gepushd worden
-document.getElementById("tafel").innerHTML = tafelvan7
