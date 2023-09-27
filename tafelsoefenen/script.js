@@ -1,4 +1,4 @@
-function displaytafel()
+function displayQuestion()
 {
     let tafelvan = document.getElementById("inputTafelVan").value
     let tafellengte = document.getElementById("inputTafelLengte").value
