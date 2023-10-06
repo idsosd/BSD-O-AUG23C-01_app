@@ -14,6 +14,8 @@ function displayQuestion()
     //let randomnumber = Math.ceil(Math.random() * tafeltot)
     opgtekst = randomnumber + " x " +  tafelvan
     document.getElementById("inputsom").value = opgtekst
+    document.getElementById("inputantwoord").value = ""
+    document.getElementById("inputantwoord").focus()
 }
 
 function checkAnswer()
@@ -21,7 +23,9 @@ function checkAnswer()
     let answer = document.getElementById("inputantwoord").value
     let correctanswer = tableof * tabletimes
     if(answer == correctanswer)
-        alert ("GOED")
+        //alert ("GOED")
+        document.getElementById("inputantwoord").classList.add("is-valid")
     else
-        alert ("FOUT")
+        //alert ("FOUT")
+        document.getElementById("inputantwoord").classList.add("is-invalid")
 }
